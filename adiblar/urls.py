@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (ListAuthorView,CreateAuthorView,UpdateAuthorView,DeleteAuthorView,
                     ListBooksView,CreateBooksView,UpdateBooksView,DeleteBooksView,
                     ListAuthorCategoryView,CreateAuthorCategoryView,UpdateAuthorCategoryView,DeleteAuthorCategoryView,
-                    ListBooksCategoryView,CreateBooksCategoryView,UpdateBooksCategoryView,DeleteBooksCategoryView)
+                    ListBooksCategoryView,CreateBooksCategoryView,UpdateBooksCategoryView,DeleteBooksCategoryView,
+                    )
 
 
 urlpatterns = [
@@ -25,5 +26,7 @@ urlpatterns = [
     path('createAuthorCategory/',CreateAuthorCategoryView.as_view()),
     path('allAuthorCategory/',ListAuthorCategoryView.as_view()),
     path('updateAuthorCategory/<int:pk>',UpdateAuthorCategoryView.as_view()),
-    path('deleteAuthorCategory/<int:pk>',DeleteAuthorCategoryView.as_view())
+    path('deleteAuthorCategory/<int:pk>',DeleteAuthorCategoryView.as_view()),
+    
+    
 ]

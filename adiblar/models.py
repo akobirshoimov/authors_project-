@@ -8,7 +8,7 @@ class AuthorModel(models.Model):
     date_of_birth = models.DateField(default='1945-08-02')
     date_of_death = models.DateField(default='2000-02-03')
     where_be_born = models.CharField(max_length=100,default=' ')
-    where_die = models.CharField(max_length=100,default=' ')
+    where_die = models.CharField(max_length=100,default='')
     description = models.TextField(default=' ')
 
     def __str__(self) -> str:
@@ -19,6 +19,7 @@ class BooksModel(models.Model):
     pages = models.IntegerField(default=200)
     publication_date = models.DateField(default='2004-10-02')
     price = models.CharField(max_length=100)
+    description = models.TextField(default=' ')
     author = models.ForeignKey(AuthorModel,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
@@ -31,7 +32,10 @@ class AuthorCategoryModel(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
 class BooksCategoryModel(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=70)
     book = models.ForeignKey(BooksModel,on_delete=models.CASCADE)
     
+    def __str__(self) -> str:
+        return self.name

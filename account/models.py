@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 class CustomUser(AbstractUser):
     CHOICE_ROLES = (
         (3,'admin'),
-        (2,'staff'),
+        (2,'writer'),
         (1,'user')
     ) 
 
